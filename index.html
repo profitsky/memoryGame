@@ -5,11 +5,311 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 
-
 <body>
+
+    <div class="game-container ">
+        <header id="game-title">
+            <h1>Memory Card Game</h1>
+        </header>
+
+        <div class="overlay-text visible">
+            Click to Start
+        </div>
+        <div id="game-over-text" class="overlay-text">
+            GAME OVER
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+        <div id="victory-text" class="overlay-text">
+            VICTORY
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+
+        <div class="game-info-container">
+            <div id="timer" class="game-info">
+                Time: <span id="time-remaining">100</span>
+            </div>
+            <div id="flip-meter" class="game-info">
+                Flips: <span id="flips">0</span>
+            </div>
+        </div>
+
+        <div id="card-deck">
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <!-- <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/brain.png"> -->
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/brain.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/dexter.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/dexter.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/homer.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/homer.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/johny.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/johny.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/micky.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/micky.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/oku.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/oku.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/sam.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="../images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="../images/sam.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="/images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="images/tiger.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/star.png">
+                    <img class="cob-web cob-web-top-right" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/star.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/star.png">
+                    <img class="reverse" src="/images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="cob-web cob-web-top-left" src="../images/diamonds.png">
+                    <img class="cob-web cob-web-top-right" src="../images/clubs.png">
+                    <img class="cob-web cob-web-bottom-left" src="../images/spares.png">
+                    <img class="cob-web cob-web-bottom-right" src="../images/hearts.png">
+                    <img class="card-value" src="images/tiger.png">
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+
+
 
 </body>
 
