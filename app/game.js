@@ -128,7 +128,7 @@ export class Game{
         this.timer.innerText = this.timeRemaining;
         this.countdown = this.startCountDown();
         setTimeout(() => {
-            // this.shuffleCards();
+            this.shuffleCards();
             this.audioController.startMusic();
             this.blockDeck = false;                                
         }, 1000)        
