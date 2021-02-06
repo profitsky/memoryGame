@@ -1,9 +1,14 @@
+@font-face {
+  font-family: "digital";
+  src: url("/fonts/digital.fnt");
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     z-index: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 body{
@@ -13,8 +18,10 @@ body{
 
 
 
-#game-title, .game-info{
+#game-title h1, .game-info{    
     color: gold;    
+    font-family: "digital";
+    letter-spacing: 3px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     background: #262626;
@@ -29,16 +36,19 @@ body{
     margin: 20px auto;
 }
 
+#time-remaining, #flips{
+  font-family: "digital";
+}
+
 .game-info
 {
     margin: 10px 10px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     width: 200px;
     border-radius: 0;
     position: absolute;
-    top: 150px;
-   
+    top: 150px;   
 }
 
 #timer
@@ -81,15 +91,13 @@ body{
     height: calc(25% - 10px);
     margin: 5px;
     position: relative; 
-    transform-style: preserve-3d;
-    transition: transform .5s;
-   
+    transform-style: preserve-3d;   
 }
 
 .card:active
 {
-    transform: scale(0.9);
-    transition: 0.2s;
+  transform: scale(0.9);
+  transition: 0.2s;
 }
 
 .card-face {
@@ -100,20 +108,20 @@ body{
   border-width: 2px;
   border-style: solid;    
   backface-visibility: hidden;
+  transition: transform .5s;
 }
 
 .card.visible .card-back {
-  transform: rotateY(-180deg); 
+  transform: rotateY(180deg); 
 }
 
 .card.visible .card-front {
-  transform: rotateY(0); 
+  transform: rotateY(0deg); 
 }
 
 
 .card-back {
-  background-color: black;
-  /* border-color: gold; */
+  background-color: black;  
 }
 
 .card-front {
@@ -131,7 +139,7 @@ body{
   transform: translate(-50%, -50%) scale(1);   
 }
 
-.card-value
+.card-image
 {
   width: 65px;
   position: relative;
@@ -149,7 +157,7 @@ body{
   transform: scale(0.7); 
 }
 
-.card.matched .card-front .card-value {
+.card.matched .card-front .card-image {
   animation: dance 1s linear infinite 500ms;
 }
 
@@ -194,7 +202,7 @@ body{
 .cover-layer.mask.visible
 {
   display: unset;
-  animation: mask-fadein 1000ms forwards;
+  animation: mask-fadein 500ms forwards;
   
 }
 .cover-layer {
@@ -212,7 +220,7 @@ body{
 }
 
 .cover-layer-small {
-  font-size: .3em;
+  font-size: .3em;  
 }
 
 .cover-layer.visible {
