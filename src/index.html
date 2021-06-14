@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+
+    <div class="game-container ">
+        <header id="game-title">
+            <h1>Memory Card Game</h1>
+        </header>
+
+        <div class="cover-layer mask visible">
+            <div class="cover-layer visible">
+                CLICK TO START
+            </div>
+            <div id="game-over-text" class="cover-layer">
+                GAME OVER
+                <span class="cover-layer-small">Click to Restart</span>
+            </div>
+            <div id="victory-text" class="cover-layer">
+                VICTORY
+                <span class="cover-layer-small">Click to Restart</span>
+                <div class="cover-layer-small">
+                    Flips: <span id="score-clicks">0</span>
+                </div>
+                <div class="cover-layer-small">
+                    Time: <span id="score-time">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-info-container">
+            <div id="timer" class="game-info">
+                Time: <span id="time-remaining">100</span>
+            </div>
+            <div id="flip-meter" class="game-info">
+                Flips: <span id="flips">0</span>
+            </div>
+        </div>
+
+        <div id="card-deck">
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/brain.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/brain.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/dexter.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/dexter.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/homer.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/homer.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/johny.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/johny.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/micky.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/micky.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/oku.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/oku.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/sam.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/sam.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/tiger.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img class="corner corner-top-left" src="./images/star.png">
+                    <img class="corner corner-top-right" src="./images/star.png">
+                    <img class="corner corner-bottom-left" src="./images/star.png">
+                    <img class="corner corner-bottom-right" src="./images/star.png">
+                    <img class="reverse" src="./images/reverse.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="corner corner-top-left" src="./images/diamonds.png">
+                    <img class="corner corner-top-right" src="./images/clubs.png">
+                    <img class="corner corner-bottom-left" src="./images/spares.png">
+                    <img class="corner corner-bottom-right" src="./images/hearts.png">
+                    <img class="card-image" src="./images/tiger.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./app/Main.js" type="module"></script>
+</body>
+
+</html>
